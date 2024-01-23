@@ -6,13 +6,13 @@ using System.Threading.Tasks;
 
 namespace Sana07
 {
-    public class Monitor : Product
+    public class _Monitor : Product
     {
         protected int UpdateFrequency { get; set; }
         protected double DisplayDiagonal { get; set; }
         protected string MatrixType { get; set; }
         protected string Color { get; set; }
-        public Monitor(string name, double price, int count, int updateFrequency, double displayDiagonal, string matrixType, string color)
+        public _Monitor(string name, double price, int count, int updateFrequency, double displayDiagonal, string matrixType, string color)
             : base(name, price, count)
         {
             UpdateFrequency = updateFrequency;
@@ -20,7 +20,7 @@ namespace Sana07
             MatrixType = matrixType;
             Color = color;
         }
-        public Monitor()
+        public _Monitor()
         {
             UpdateFrequency = 0;
             DisplayDiagonal = 0;

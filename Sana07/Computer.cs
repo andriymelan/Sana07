@@ -7,7 +7,7 @@ using System.Threading.Tasks;
 
 namespace Sana07
 {
-    public class Computer:Product
+    public class Computer : Product
     {
         protected int PowerOfPowerSupply {  get; set; }
         protected int RAM_Memory { get; set; }
