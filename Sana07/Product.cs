@@ -8,9 +8,41 @@ namespace Sana07
 {
     public abstract class Product
     {
-        protected string Name { get; set; }
-        public double Price { get; protected set; }
-        protected int Count { get; set; }
+        protected string _Name;
+        protected double _Price;
+        protected int _Count;
+        protected String Name
+        {
+            get => _Name;
+            set
+            {
+                if (value != "")
+                    _Name = value;
+                else
+                    throw new MyExceptions("Name", "Product");
+            }
+        }
+        public double Price
+        {
+            get => _Price;
+            protected set {
+                if (value >= 0)
+                    _Price = value;
+                else
+                    throw new MyExceptions("Price","Product");
+            }
+        }
+        protected int Count
+        {
+            get => _Count;
+            set
+            {
+                if (value >= 0)
+                    _Count = value;
+                else
+                    throw new MyExceptions("Count", "Product");
+            }
+        }
         public Product(string name, double price, int count)
         {
             Name = name;
@@ -20,8 +52,8 @@ namespace Sana07
         public Product()
         {
             Name = "NM";
-            Price = 0;
-            Count = 0;
+            Price = 1;
+            Count = 1;
         }
         public abstract string Display();
     }

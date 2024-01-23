@@ -9,10 +9,54 @@ namespace Sana07
 {
     public class Computer : Product
     {
-        protected int PowerOfPowerSupply {  get; set; }
-        protected int RAM_Memory { get; set; }
-        protected int VideoMemory { get; set; }
-        protected int SSD_Memory { get; set; }
+        protected int _PowerOfPowerSupply;
+        protected int _RAM_Memory;
+        protected int _VideoMemory;
+        protected int _SSD_Memory;
+        protected int PowerOfPowerSupply
+        {
+            get => _PowerOfPowerSupply;
+            set
+            {
+                if (value > 0)
+                    _PowerOfPowerSupply = value;
+                else
+                    throw new MyExceptions("PowerOfPowerSupply", "Compute");
+            }
+        }
+        protected int RAM_Memory
+        {
+            get => _RAM_Memory;
+            set
+            {
+                if (value > 0)
+                    _RAM_Memory = value;
+                else
+                    throw new MyExceptions("RAM_Memory", "Compute");
+            }
+        }
+        protected int VideoMemory
+        {
+            get => _VideoMemory;
+            set
+            {
+                if (value > 0)
+                    _VideoMemory = value;
+                else
+                    throw new MyExceptions("VideoMemory", "Compute");
+            }
+        }
+        protected int SSD_Memory
+        {
+            get => _SSD_Memory;
+            set
+            {
+                if (value > 0)
+                    _SSD_Memory = value;
+                else
+                    throw new MyExceptions("SSD_Memory", "Compute");
+            }
+        }
         public Computer(string name, double price, int count, int powerOfPowerSupply, int rAM_Memory, int videoMemory, int sSD_Memory)
             : base(name, price, count)
         {
@@ -23,10 +67,10 @@ namespace Sana07
         }
         public Computer()
         {
-            PowerOfPowerSupply = 0;
-            RAM_Memory = 0;
-            VideoMemory = 0;
-            SSD_Memory = 0;
+            PowerOfPowerSupply = 1;
+            RAM_Memory = 1;
+            VideoMemory = 1;
+            SSD_Memory = 1;
         }
         public override string Display()
         {

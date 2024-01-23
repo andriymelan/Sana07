@@ -8,10 +8,54 @@ namespace Sana07
 {
     public class Smartphone : Product
     {
-        protected double DisplayDiagonal { get; set; }
-        protected int RAM { get; set; }
-        protected int BuiltMemory { get; set; }
-        protected int BatteryCapacity { get; set; }
+        protected double _DisplayDiagonal;
+        protected int _RAM;
+        protected int _BuiltMemory;
+        protected int _BatteryCapacity;
+        protected double DisplayDiagonal
+        {
+            get => _DisplayDiagonal;
+            set
+            {
+                if (value > 0)
+                    _DisplayDiagonal = value;
+                else
+                    throw new MyExceptions("DisplayDiagonal", "Smartphone");
+            }
+        }
+        protected int RAM
+        {
+            get => _RAM;
+            set
+            {
+                if (value > 0)
+                    _RAM = value;
+                else
+                    throw new MyExceptions("RAM", "Smartphone");
+            }
+        }
+        protected int BuiltMemory
+        {
+            get => _BuiltMemory;
+            set
+            {
+                if (value > 0)
+                    _BuiltMemory = value;
+                else
+                    throw new MyExceptions("BuiltMemory", "Smartphone");
+            }
+        }
+        protected int BatteryCapacity
+        {
+            get => _BatteryCapacity;
+            set
+            {
+                if (value > 0)
+                    _BatteryCapacity = value;
+                else
+                    throw new MyExceptions("BatteryCapacity", "Smartphone");
+            }
+        }
         public Smartphone(string name, double price, int count, double displayDiagonal, int rAM, int builtMemory, int batteryCapacity)
             : base(name, price, count)
         {
@@ -22,10 +66,10 @@ namespace Sana07
         }
         public Smartphone()
         {
-            DisplayDiagonal = 0;
-            RAM = 0;
-            BuiltMemory = 0;
-            BatteryCapacity = 0;
+            DisplayDiagonal = 1;
+            RAM = 1;
+            BuiltMemory = 1;
+            BatteryCapacity = 1;
         }
         public override string Display()
         {
